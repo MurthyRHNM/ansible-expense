@@ -1,0 +1,25 @@
+- name: configuration of db
+  hosts: web
+  become: yes
+  vars_prompt:
+  - name: mysql_root_password
+    prompt: please enter password
+    private: no
+  tasks:
+  - name: install mysql-server
+    ansible.builtin.dnf:
+      name: mysql-server
+      state: latest
+
+  - name: start and enable mysqld
+    ansible.builtin.service:
+      name: mysqld
+      state: started
+      enabled: yes
+
+  - name: check db connection
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: "{{ db.lrnm.online }}"
+      filter: version
