@@ -1,6 +1,8 @@
 - name: configuration of db
   hosts: db
   become: yes
+  vars:
+    login_host: db.lrnm.online
   vars_prompt:
   - name: mysql_root_password
     prompt: please enter password
@@ -21,7 +23,7 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_root_password }}"
-      login_host: "{{ db }}"
+      login_host: "{{ login_host }}"
       filter: version
     ignore_errors: yes
     register: mysql_root_connection 
