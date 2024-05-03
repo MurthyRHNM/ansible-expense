@@ -23,4 +23,5 @@
       login_password: "{{ mysql_root_password }}"
       login_host: "{{ db.lrnm.online }}"
       filter: version
-    ignore_errors: yes  
+    ignore_errors: yes
+    register: mysql_root_connection 
