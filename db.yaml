@@ -17,7 +17,7 @@
       state: started
       enabled: yes
 
-  - name: check db connection
+  - name: check DB connection
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_root_password }}"
