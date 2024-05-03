@@ -1,5 +1,5 @@
 - name: configuration of db
-  hosts: web
+  hosts: db
   become: yes
   vars_prompt:
   - name: mysql_root_password
