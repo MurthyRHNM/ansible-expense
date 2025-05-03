@@ -3,7 +3,9 @@
 172.31.22.66
 
 [backend]
-backend.lrnm.online
+#backend.lrnm.online
+172.31.17.161
 
 [frontend]
-lrnm.online
+#lrnm.online
+172.31.90.236
