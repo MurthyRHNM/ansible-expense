@@ -1,5 +1,6 @@
 [db]
-db.lrnm.online
+#db.lrnm.online
+172.31.22.66
 
 [backend]
 backend.lrnm.online
